@@ -65,5 +65,6 @@ const authoptions = NextAuth({
     }
   }
 })
+export const dynamic = "force-dynamic"; 
+
 export { authoptions as GET, authoptions as POST }
-export const dynamic = "force-dynamic"; // Ensures API routes are always dynamic

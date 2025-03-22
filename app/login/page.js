@@ -8,7 +8,7 @@ const Login = () => {
     const { data: session } = useSession()
 
     useEffect(() => {
-        document.title="Dashboard - Get me a Chai"
+        document.title="Dashboard - FundBay"
 
     }, [])
     
