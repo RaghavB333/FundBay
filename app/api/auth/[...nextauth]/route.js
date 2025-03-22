@@ -9,6 +9,10 @@ import User from '@/models/user'
 import Payment from '@/models/payment'
 import connectDB from '@/db/connectDb'
 
+export const config = {
+  runtime: "edge",
+};
+
 
 const authoptions = NextAuth({
   providers: [
