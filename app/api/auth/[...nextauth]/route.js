@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import User from '@/models/user';
 import connectDB from '@/db/connectDb';
 
-export const runtime = "edge"; // Ensure the API runs on the Edge runtime
+export const runtime = "nodejs"; // Use Node.js runtime for better DB compatibility
 
 const handler = NextAuth({
   providers: [
@@ -32,8 +32,13 @@ const handler = NextAuth({
       }
     },
     async session({ session }) {
+      if (!session?.user?.email) return session;
       const dbUser = await User.findOne({ email: session.user.email });
-      session.user.name = dbUser.username;
+
+      if (dbUser) {
+        session.user.name = dbUser.username;
+      }
+
       return session;
     }
   }
