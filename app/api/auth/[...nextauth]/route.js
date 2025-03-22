@@ -10,6 +10,7 @@ import Payment from '@/models/payment'
 import connectDB from '@/db/connectDb'
 
 
+export const runtime = "edge";
 
 
 const authoptions = NextAuth({
