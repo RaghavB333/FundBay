@@ -9,9 +9,7 @@ import User from '@/models/user'
 import Payment from '@/models/payment'
 import connectDB from '@/db/connectDb'
 
-export const config = {
-  runtime: "edge",
-};
+
 
 
 const authoptions = NextAuth({
@@ -68,3 +66,4 @@ const authoptions = NextAuth({
   }
 })
 export { authoptions as GET, authoptions as POST }
+export const dynamic = "force-dynamic"; // Ensures API routes are always dynamic
