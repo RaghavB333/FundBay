@@ -1,10 +1,11 @@
+export const runtime = "nodejs"; // Use Node.js runtime for better DB compatibility
+
 import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import mongoose from 'mongoose';
 import User from '@/models/user';
 import connectDB from '@/db/connectDb';
 
-export const runtime = "nodejs"; // Use Node.js runtime for better DB compatibility
 
 const handler = NextAuth({
   providers: [
