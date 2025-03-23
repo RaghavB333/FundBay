@@ -1,4 +1,4 @@
-export const runtime = "nodejs"; // Use Node.js runtime for better DB compatibility
+export const runtime = "edge";
 
 import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
