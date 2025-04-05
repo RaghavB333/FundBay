@@ -1,7 +1,8 @@
-export const runtime = "nodejs"; // Use Node.js runtime for better DB compatibility
+// export const runtime = "edge";
 
 import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 import mongoose from 'mongoose';
 import User from '@/models/user';
 import connectDB from '@/db/connectDb';
@@ -13,11 +14,15 @@ const handler = NextAuth({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
       scope: 'user:email',
-    })
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
   ],
   callbacks: {
     async signIn({ user, account }) {
-      if (account.provider === "github") {
+      if (account.provider === "github" || account.provider === "google") {
         await connectDB();
         const currentUser = await User.findOne({ email: user.email });
 

@@ -26,6 +26,6 @@ export default Username
 // or Dynamic metadata
 export async function generateMetadata({ params }) {
   return {
-    title: `Support ${params.username}- Get me a Chai`,
+    title: `Support ${params.username}- FundBay`,
   }
 }

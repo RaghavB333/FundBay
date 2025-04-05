@@ -36,6 +36,15 @@ const Navbar = () => {
       </Link>
 
       <div className='relative'>
+        <Link href="/">
+          <button
+            type="button"
+            className="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 max-md:flex max-md:justify-center max-md:items-center max-md:relative max-md:left-[2px] max-md:h-14"
+          >
+            Home
+          </button>
+        </Link>
+
         {session && session.user && (
           <>
             <button
@@ -74,7 +83,8 @@ const Navbar = () => {
           <button
             type="button"
             className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 max-md:flex max-md:justify-center max-md:items-center max-md:relative max-md:left-28 max-md:h-14"
-            onClick={() => signOut()}
+            onClick={() => signOut({ callbackUrl: '/login' })}
+
           >
             Logout
           </button>
