@@ -43,7 +43,7 @@ export const POST = async (req) => {
             );
 
             if (updatedPayment && updatedPayment.to_user) {
-                return NextResponse.redirect(`/${session.user.name}?paymentdone=true`);
+                return NextResponse.redirect(`/${user.username}?paymentdone=true`);
             } else {
                 console.error(`Failed to update payment status.`);
                 return NextResponse.json({ success: false, message: "Failed to update payment status" });
