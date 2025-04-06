@@ -1,24 +1,26 @@
-// app/[username]/page.tsx
+import React from 'react';
 import PaymentPage from '../components/PaymentPage';
+import { notFound } from 'next/navigation';
 import connectDB from '@/db/connectDb';
 import User from '@/models/user';
-import { notFound } from 'next/navigation';
 
-export default async function UsernamePage({ params }) {
+const Username = async ({ params }) => {
   try {
     await connectDB();
 
     const user = await User.findOne({ username: params.username });
+
     if (!user) return notFound();
 
     return <PaymentPage username={params.username} />;
   } catch (error) {
-    console.error('💥 Error in dynamic route [username]:', error);
-    return notFound(); // fallback for deployment safety
+    console.error('Error in [username]/page.jsx:', error);
+    return notFound(); // or a custom error component
   }
-}
+};
 
-// Optional SEO
+export default Username;
+
 export async function generateMetadata({ params }) {
   return {
     title: `Support ${params.username} - FundBay`,
