@@ -37,16 +37,20 @@ const handler = NextAuth({
         return true;
       }
     },
-    async session({ session }) {
-      if (!session?.user?.email) return session;
-      const dbUser = await User.findOne({ email: session.user.email });
+   async session({ session }) {
+  if (!session?.user?.email) return session;
 
-      if (dbUser) {
-        session.user.name = dbUser.username;
-      }
+  await connectDB(); // ✅ Add this to prevent Vercel timeout
 
-      return session;
-    }
+  const dbUser = await User.findOne({ email: session.user.email });
+
+  if (dbUser) {
+    session.user.name = dbUser.username;
+  }
+
+  return session;
+}
+
   }
 });
 
