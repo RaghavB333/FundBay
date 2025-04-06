@@ -3,19 +3,17 @@ import PaymentPage from '../components/PaymentPage'
 import { notFound } from 'next/navigation'
 import connectDB from '@/db/connectDb'
 import User from '@/models/user'
+
 const Username = async ({ params }) => {
-  const checkUser = async () => {
-    connectDB()
-    let u = await User.findOne({ username: params.username })
-   
-    if (!u) {
-      return notFound()
-    }
-  }
-  await checkUser()
+  // Connect to MongoDB first
+  await connectDB()
+
+  // Check if the user exists
+  const user = await User.findOne({ username: params.username })
+  if (!user) return notFound()
+
   return (
     <>
-
       <PaymentPage username={params.username} />
     </>
   )
@@ -23,9 +21,9 @@ const Username = async ({ params }) => {
 
 export default Username
 
-// or Dynamic metadata
+// Dynamic metadata for SEO
 export async function generateMetadata({ params }) {
   return {
-    title: `Support ${params.username}- FundBay`,
+    title: `Support ${params.username} - FundBay`,
   }
 }
