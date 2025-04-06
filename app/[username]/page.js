@@ -1,5 +1,5 @@
 // app/[username]/page.tsx
-import PaymentPage from '@/app/components/PaymentPage';
+import PaymentPage from '../components/PaymentPage';
 import connectDB from '@/db/connectDb';
 import User from '@/models/user';
 import { notFound } from 'next/navigation';
