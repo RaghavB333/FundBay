@@ -1,5 +1,5 @@
-// lib/mongodb.js or db/connectDb.js
-import mongoose from "mongoose";
+// db/connectDb.js
+import mongoose from 'mongoose';
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -14,9 +14,7 @@ if (!cached) {
 }
 
 async function connectDB() {
-  if (cached.conn) {
-    return cached.conn;
-  }
+  if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI, {
