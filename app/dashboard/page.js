@@ -147,12 +147,13 @@ const Dashboard = () => {
                     </button>
                 </form>
                 <br /><br />
-                <p>
+                <p className='ml-[30vw]'>
                   To visit a demo page click{" "}
                   <a
                     href="https://fund-bay.vercel.app/raghavbhargava3"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="underline"
                   >
                     here
                   </a>
