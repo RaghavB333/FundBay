@@ -146,6 +146,17 @@ const Dashboard = () => {
                         Save
                     </button>
                 </form>
+                <br /><br />
+                <p>
+                  To visit a demo page click{" "}
+                  <a
+                    href="https://fund-bay.vercel.app/raghavbhargava3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    here
+                  </a>
+                </p>
             </div>
         </>
     );
