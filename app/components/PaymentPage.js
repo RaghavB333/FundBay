@@ -186,7 +186,9 @@ const PaymentPage = ({ username }) => {
                         )}
                     </div>
                     <div className="makePayment w-1/2 bg-slate-950 rounded-lg text-white p-10 max-md:w-full">
-                        <h2 className='text-2xl font-bold my-5'>Make a Payment</h2>
+                        <h2 className='text-2xl font-bold my-5'>Make a Payment</h2> <p className="text-sm text-white">
+    (Name and message are necessary to initiate a payment)
+  </p>
                         <div className="flex gap-2 flex-col">
                             <input onChange={handleChange} value={paymentform.name || ''} type="text" name="name" placeholder='Enter Name' className='w-full p-3 rounded-lg bg-slate-800' />
                             <input onChange={handleChange} value={paymentform.message || ''} type="text" name="message" placeholder='Enter Message' className='w-full p-3 rounded-lg bg-slate-800' />
