@@ -25,7 +25,7 @@ export default function Home() {
       <div className="bg-white h-1  opacity-10 "></div>
       
       <div className="bg-white h-1  opacity-10"></div>
-      <div className="text-white container ml-52 w-[calc(100vw-26rem)] pb-32 pt-14 flex flex-col items-center justify-center md:mx-72 max-md:w-[calc(100vw-6rem)]">
+      <div className="text-white container ml-52 w-[calc(100vw-26rem)] pb-32 pt-14 flex flex-col items-center justify-center md:mx-84 max-md:w-[calc(100vw-6rem)]">
         <h2 className="text-3xl font-bold text-center mb-14">Learn More about us</h2>
         <iframe width="350" height="315" src="https://www.youtube.com/embed/hU9flsFPzDs?si=WI1yOhM95BM_yiFZ" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
